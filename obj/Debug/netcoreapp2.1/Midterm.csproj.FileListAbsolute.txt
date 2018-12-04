@@ -1,0 +1,11 @@
+/Users/Xander/Desktop/CIDM3312/inClass/Midterm/bin/Debug/netcoreapp2.1/Midterm.deps.json
+/Users/Xander/Desktop/CIDM3312/inClass/Midterm/bin/Debug/netcoreapp2.1/Midterm.runtimeconfig.json
+/Users/Xander/Desktop/CIDM3312/inClass/Midterm/bin/Debug/netcoreapp2.1/Midterm.runtimeconfig.dev.json
+/Users/Xander/Desktop/CIDM3312/inClass/Midterm/bin/Debug/netcoreapp2.1/Midterm.dll
+/Users/Xander/Desktop/CIDM3312/inClass/Midterm/bin/Debug/netcoreapp2.1/Midterm.pdb
+/Users/Xander/Desktop/CIDM3312/inClass/Midterm/obj/Debug/netcoreapp2.1/Midterm.csprojAssemblyReference.cache
+/Users/Xander/Desktop/CIDM3312/inClass/Midterm/obj/Debug/netcoreapp2.1/Midterm.csproj.CoreCompileInputs.cache
+/Users/Xander/Desktop/CIDM3312/inClass/Midterm/obj/Debug/netcoreapp2.1/Midterm.AssemblyInfoInputs.cache
+/Users/Xander/Desktop/CIDM3312/inClass/Midterm/obj/Debug/netcoreapp2.1/Midterm.AssemblyInfo.cs
+/Users/Xander/Desktop/CIDM3312/inClass/Midterm/obj/Debug/netcoreapp2.1/Midterm.dll
+/Users/Xander/Desktop/CIDM3312/inClass/Midterm/obj/Debug/netcoreapp2.1/Midterm.pdb
