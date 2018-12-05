@@ -15,7 +15,13 @@ namespace Midterm
             SeedDatabase();
            // Problem1();
            // Problem1_2();
-            Problem1_3();
+           // Problem1_3();
+           // Problem2();
+           // Problem2_2();
+           // Problem3();
+           // Problem3_2();
+           // Problem4();
+            Problem4_2();
         }
 
         public static void Problem1() 
@@ -64,6 +70,113 @@ namespace Midterm
                 {
                     Console.WriteLine(a);
                 }
+            }
+        }
+
+        public static void Problem2()
+        {
+            using (var db = new AppDbContext())
+            {
+                var booksJoined = db.Book.Join(
+                            db.Author, 
+                            b => b.AuthorID,
+                            a => a.AuthorID,
+                            (b, a) => new
+                                {
+                                    Title = b.Title,
+                                    Publisher = b.Publisher,
+                                    AuthorFName = a.AuthorFName,
+                                    AuthorLName = a.AuthorLName
+                                }).ToList();
+              Console.WriteLine(booksJoined.Find(a => a.AuthorFName == "Adam"));
+            }
+        }
+
+        public static void Problem2_2()
+        {
+            using (var db = new AppDbContext())
+            {
+                var books = db.Book.ToList();
+                Console.WriteLine(books.Find(b => b.Pages > 1000));
+            }
+        }
+
+        public static void Problem3()
+        {
+            using (var db = new AppDbContext())
+            {
+                var books = db.Book.ToList();
+                var booksJoined = db.Book.Join(
+                            db.Author, 
+                            b => b.AuthorID,
+                            a => a.AuthorID,
+                            (b, a) => new
+                                {
+                                    Title = b.Title,
+                                    Publisher = b.Publisher,
+                                    AuthorFName = a.AuthorFName,
+                                    AuthorLName = a.AuthorLName
+                                });
+                var orderedList = booksJoined.OrderBy(a => a.AuthorLName);
+                foreach(var b in booksJoined)
+                {
+                    Console.WriteLine(b);
+                }
+            }
+        }
+
+        public static void Problem3_2()
+        {
+            using (var db = new AppDbContext())
+            {
+                var books = db.Book.ToList();
+                var decscendingList = books.OrderByDescending(b => b.Title);
+                foreach(var b in decscendingList)
+                {
+                    Console.WriteLine(b);
+                }
+            }
+        }
+
+        public static void Problem4()
+        {
+            using (var db = new AppDbContext())
+            {
+                var books = db.Book.ToList();
+                var publisherList = books.GroupBy(b => b.Publisher);
+                foreach(var group in publisherList) {
+                    Console.WriteLine($"Publisher: {group.Key}");
+                    foreach(Book b in group) {
+                        Console.WriteLine(b);
+                    }
+                } 
+            }
+        }
+
+        public static void Problem4_2()
+        {
+            using (var db = new AppDbContext())
+            {
+                var books = db.Book.ToList();
+                var booksJoined = db.Book.Join(
+                            db.Author, 
+                            b => b.AuthorID,
+                            a => a.AuthorID,
+                            (b, a) => new
+                                {
+                                    Title = b.Title,
+                                    Publisher = b.Publisher,
+                                    AuthorFName = a.AuthorFName,
+                                    AuthorLName = a.AuthorLName
+                                });
+                var publisherList = books.GroupBy(b => b.Publisher);
+                var orderedList = booksJoined.OrderBy(a => a.AuthorLName);
+                foreach(var group in publisherList) {
+                    Console.WriteLine($"Publisher: {group.Key}");
+                    foreach(Book b in group) {
+                        Console.WriteLine(b);
+                    }
+                } 
             }
         }
 

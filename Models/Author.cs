@@ -8,5 +8,10 @@ namespace Midterm
         public string AuthorFName{get;set;}
         public string AuthorLName{get;set;}
 
+        public override string ToString()
+    {
+        return this.AuthorFName + " " + this.AuthorLName;
+    }
+
     }
 }
